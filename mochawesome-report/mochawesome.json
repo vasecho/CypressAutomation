@@ -1,0 +1,100 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-09-06T13:51:39.292Z",
+    "end": "2022-09-06T13:51:41.244Z",
+    "duration": 1952,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f918211e-5363-4601-9d50-716ae55a6902",
+      "title": "",
+      "fullFile": "cypress\\integration\\tests\\Test2.js",
+      "file": "cypress\\integration\\tests\\Test2.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2f08a5bd-8d6c-48e4-8c71-6cf1d2018e0b",
+          "title": "My first test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "My firs test case",
+              "fullTitle": "My first test My firs test case",
+              "timedOut": null,
+              "duration": 1898,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//test case 1 \n//cy.visit(\"https://jira.trungk18.com/\");\n//cy.viewport(1280, 720)\ncy.visit(Cypress.env('testUrl'));\ncy.get('.input').type('Story'); //selenium get hit url in browser, cypress get acts like findElement of Selenium\ncy.get('div.issue').should('have.length', 1);\ncy.get('.text-2xl').then(function (logoElement) {\n  cy.log(logoElement.text());\n});",
+              "err": {},
+              "uuid": "69405743-fb4a-4419-ab43-27afbdae140e",
+              "parentUUID": "2f08a5bd-8d6c-48e4-8c71-6cf1d2018e0b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "69405743-fb4a-4419-ab43-27afbdae140e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1898,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}

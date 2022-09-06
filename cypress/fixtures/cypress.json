@@ -1,0 +1,8 @@
+{
+    "viewportWidth": 1000,
+    "viewportHeight": 600,
+    "env": {
+        "testUrl": "https://jira.trungk18.com/project/board"
+    }
+
+}
