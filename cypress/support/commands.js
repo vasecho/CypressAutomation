@@ -23,3 +23,14 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+Cypress.Commands.add('openSearch', ()=> {
+    cy.get(':nth-child(2) > .itemIcon > .anticon > svg').click()
+})
+
+
+Cypress.Commands.add('searchFor', (sText)=> {
+    cy.get('.mb-10 > j-input > .input-container > .input').type(sText)
+})
+
+
+

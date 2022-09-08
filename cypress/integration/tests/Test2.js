@@ -1,28 +1,64 @@
 /// <reference types="Cypress" />
-/// <reference types="cypress-iframe" />
 
-import 'cypress-iframe'
+import BasePage from '../pageObjects/BasePage'
 
-describe('My first test', function() 
+describe('Validation of basic functionalities', function() 
 {
 
-    
-  
+    this.beforeEach(function() {
+        cy.fixture('example').then(function(data){
+            this.data = data
+        })
+    })
 
-    it('My firs test case', function()
+    //4.TC - Validate search functionality
+    it('4.TC - Validate search functionality', function()
     {
-       //test case 1 
-       //cy.visit("https://jira.trungk18.com/");
-       //cy.viewport(1280, 720)
-       cy.visit(Cypress.env('testUrl'))
-       cy.get('.input').type('Story')
-       //selenium get hit url in browser, cypress get acts like findElement of Selenium
-       cy.get('div.issue').should('have.length',1)
-       cy.get('.text-2xl').then(function(logoElement)
-       {
-        cy.log(logoElement.text())
-       })
+        const basePage = new BasePage()
+       
+        basePage.visit()
+        cy.openSearch()
+
+        cy.log('Enter "Angular" into search input and validate that there are 12 issues as result')
+        cy.searchFor('Angular')
+        var sum = 0
+        cy.get('search-drawer.ng-star-inserted issue-result').each(($el, index, $list) => {
+            sum = sum +1
+        }).then(function() {
+            cy.log('When searching for "Angular" found :', sum , ' issues')
+             // There should be 12 issues found when searching for 'Angular'
+            expect(sum).to.equal(12)
+        })
+
+        cy.log('Clear the search input and validate that there are 5 default results')
+        cy.get('.mb-10 > j-input > .input-container > .input').clear()
+        var eSum = 0
+        cy.get('search-drawer.ng-star-inserted issue-result').each(($el, index, $list) => {
+            eSum = eSum +1
+        }).then(function() {
+            cy.log('For empty search, there are ', eSum , ' issues found')
+             // There should be 5 issues found for empty search
+            expect(eSum).to.equal(5)
+        })
+    })
+
+
+    //5.TC-Validate create issue functionality
+    it('5.TC-Validate create issue functionality', function(){
+        const basePage1 = new BasePage()
+       
+        basePage1.visit()
+        
+        basePage1.clickCreateIssue()
+        basePage1.getModalTitle().then(function(element) {
+            const sTitle = element.text()
+            console.log(sTitle)
+            expect(sTitle.includes('Create issue')).to.be.true
+        })
+
 
     })
+
+
 
 })
