@@ -1,5 +1,9 @@
 # CypressAutomation
-cypresss autoamtion
+
+Report can be found under \CypressAutomation\mochawesome-report\
+
+
+TESTS:
 
 Scenario 1 - Basic UI validation
 
@@ -70,6 +74,8 @@ Test Steps:
 5.Verify that an issue is crated and that it is present in backlog section of board (Board issue conter has increased)
 
 ..........................
+
+>>>>>Following test cases are nice to have, ie did not get automated:
 
 8.TC-Validate move (by editing it's status when open) issue functionality
 Test Steps:
