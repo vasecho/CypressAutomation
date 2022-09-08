@@ -1,2 +1,127 @@
 # CypressAutomation
 cypresss autoamtion
+
+Scenario 1 - Basic UI validation
+
+1.TC - Validate UI - Left side navigation
+Steps:
+1.Navigate to basePage
+2.Verify that there is navBarLeft present and that it has “Search” and “Create issue” links , as well as avatar icon and information link
+3.Verify that there is appSideBar present and that it has  title – Angular Jira Clone, and two implemented links Kanban board, and Project settings and five non-implemented links: Releases, Issues and filters, Pages, Reports and Components
+
+..........................................
+
+2.TC - Validate UI - Header & filters validation
+Test steps:
+1.Navigate to basePage
+2.Verify that there are breadcrumbs present and that they have Projects / Angular Jira Clone / Knaban board
+3.Verify that there Check if there is a header present with title – Kanban board, and social links (Support, Spotify, Tetris, Storybook, Tweet, and Source Code)
+4.Verify that there is a board-filter with Search, user icons (avatars), and two filter buttons: ‘Only My Issues’ and ‘Ignore Resolved’
+
+...................................
+
+3.TC - Validate UI - Board columns
+Test Steps:
+1.Navigate to Base page
+2.Validate that there are 4 columns in board 
+3.Validate that columns have proper names
+4.Validate that number of issues in each column correspnds with the number displayed in column name
+
+.................................
+
+4.TC-Validate create issue UI 
+Test Steps:
+1.Navigate to Base page
+2.Open Create issue from navBarLeft
+3.Validate that all the elements are present such as: title, issueType dropdown, issuePriority, Short summary, description, Reporter, assignees, and close, create issue and cancel buttons
+4.Validate that all options dropdown has required elements
+5.Close create issue modal by clicking on cancel button
+
+..................................
+
+5.TC-Validate open issue UI 
+Test Steps:
+1.Navigate to Base page
+2.Select an issue from board and click on it in order to be opened
+3.Validate that all the elements are present such as: title, issueType dropdown, issuePriority, Short summary, description, Reporter, assignee ...
+4.Close the open issue by clicking on close button
+
+///////////////////////////////////////////////////
+---------------------------------------------------
+//////////////////////////////////////////////////
+
+Scenario 2 - Basic functionalities validation
+
+6.TC - Validate search functionality
+Test Steps:
+1.Navigate to Base page
+2.Open Search from navBarLeft
+3.Enter 'Angular' into search input and validate that there are 12 issues as result
+4.Clear the search input and validate that there are 5 default results
+
+..........................
+
+7.TC-Validate create issue functionality
+Test Steps:
+1.Navigate to Base page
+2.Open Create issue from navBarLeft
+3.Fill all required fields and select poper values from appropriate dropdowns
+4.Click on 'Create issue' button in order to create an issue
+5.Verify that an issue is crated and that it is present in backlog section of board (Board issue conter has increased)
+
+..........................
+
+8.TC-Validate move (by editing it's status when open) issue functionality
+Test Steps:
+1.Navigate to Base page
+2.Select an issue from Backlog board column and open it 
+3.Verify it's status is Backlog and by clicking on close button
+4.Select the issue one more time and move it to Selected for development by drag and drop
+5.Validate that Backolog column issue counter has decrased and Selected for development issue counter has increased for one
+6.Open it again from Selected for develpment and validate that it's status has changed to 'Selected for development'
+7.Close the issue
+
+.........................
+
+9.TC-Validate move (by editing it's status when open) issue functionality
+Test Steps:
+1.Navigate to Base page
+2.Select an issue from Backlog board column and open it 
+3.Verify it's status is Backlog and and change it to 'Selected for development' and close the issue by clicking on close button
+4.Validate that Backolog column issue counter has decrased and Selected for development issue counter has increased for one
+5.Open it again from Selected for develpment and validate that it's status has changed to 'Selected for development'
+6.Close the issue
+
+........................
+
+10.TC-Validate board filters - User Avatar
+Test Steps:
+1.Navigate to Base page
+2.Validate that there is no 'Clear All' button present 
+3.Click on user avatar icon next to board search input (for example 'Iron man')
+4.Validate that all the issues present in board now have Iron man as assignee
+5.Validate that there is a 'Clear All' button present now
+6.Click on 'Clear All' button
+
+........................
+
+11.TC-Validate board filters - Only my issues
+Test Steps:
+1.Navigate to Base page
+2.Validate that there is no 'Clear All' button present 
+3.Click on 'Only my issues' button
+4.Validate that all the issues present in board now have Trung Vo (default user) as assignee 
+5.Validate that there is a 'Clear All' button present now
+6.Click on 'Clear All' button
+
+........................
+
+12.TC-Validate board filters - Ignore Resolved
+Test Steps:
+1.Navigate to Base page
+2.Validate that there is no 'Clear All' button present 
+3.Click on 'Ignore Resolved' button
+4.Validate that 'Done' coulmn has no issues present
+5.Validate that there is a 'Clear All' button present now
+6.Click on 'Clear All' button
+
