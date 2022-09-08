@@ -4,9 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node_modules\\.bin\\cypress run",
     "cypress:open": "cypress open",
-    "cy:run": "cypress run"
+    "cy:run": "cypress run",
+    "scen1": "npm test -- --reporter mochawesome --spec \"cypress/integration/test/Test1.js\"",
+    "scen2": "npm test -- --reporter mochawesome --spec \"cypress/integration/test/Test2.js\"",
+    "testChrome": "npm test -- --reporter mochawesome --browser chrome",
+    "testFF": "npm test -- --reporter mochawesome --browser firefox --headed"
   },
   "author": "",
   "license": "ISC",

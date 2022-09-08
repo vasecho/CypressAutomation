@@ -4,16 +4,17 @@ const { defineConfig } = require("cypress");
 module.exports = defineConfig({
   projectId: "3vqw4r",
   env: {
-    //baseUrl: 'https://jira.trungk18.com/',
-    testUrl: 'https://jira.trungk18.com/project/board',
+   
   },
   e2e: {
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
     specPattern: 'cypress/integration/tests/*.*js',
+
+    //below number is high (10000) due to instability of app
     defaultCommandTimeout: 10000,
-    baseUrl: 'https://jira.trungk18.com/',
+    baseUrl: 'https://jira.trungk18.com/project/board',
     viewportWidth: 1280,
     viewportHeight: 720,
     reporter: 'mochawesome',
