@@ -6,11 +6,14 @@
   "scripts": {
     "test": "node_modules\\.bin\\cypress run",
     "cypress:open": "cypress open",
+    "start-server": "npm start",
     "cy:run": "cypress run",
+    "cy:ci": "start-server-and-test start-server http://localhost:3000 cy:run",
     "scen1": "npm test -- --reporter mochawesome --spec \"cypress/integration/test/Test1.js\"",
     "scen2": "npm test -- --reporter mochawesome --spec \"cypress/integration/test/Test2.js\"",
     "testChrome": "npm test -- --reporter mochawesome --browser chrome",
     "testFF": "npm test -- --reporter mochawesome --browser firefox --headed"
+    
   },
   "author": "",
   "license": "ISC",
